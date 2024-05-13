@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Deploy to Production
-        run: echo "Deploying your Flask application here..."
+        run: echo "Deploying your Flask application..."
 
       - name: Run Python CI/CD Composite Action
-        uses: ./.github/workflows/composite_action.yml
+        uses: ./.github/actions/action.yml
