@@ -11,10 +11,12 @@ jobs:
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
+
+      - name: Run Composite Action
+        uses: ./.github/workflows/composite_action.yml
 
       - name: Deploy to Production
         run: echo "Deploying your Flask application here..."
 
-      - name: Run Python CI/CD Composite Action
-        uses: ./composite_action.yml
+      
