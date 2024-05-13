@@ -9,9 +9,12 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     
     steps:
+    - name: Deploy to Production
+      run: echo "Deploying your Flask application..."
+        
     - name: Run Python CI/CD Composite Action
       uses: ./composite_action.yml
