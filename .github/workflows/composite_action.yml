@@ -30,7 +30,7 @@ jobs:
       run: pytest
 
     - name: Deploy to Production
-      uses: "solvers-camp/Python-Flask@latest"
+      uses: "Thilaga-26/Python-Flask@latest"
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         prerelease: false
