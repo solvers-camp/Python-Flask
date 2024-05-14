@@ -6,7 +6,7 @@ runs:
 
     - name: Create directory for test results
       shell: bash
-      run: mkdir -p test-results
+      run: mkdir -p junit/test-results-${{ matrix.python-version }}.xml
 
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v3
