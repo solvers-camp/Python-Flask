@@ -17,6 +17,6 @@ jobs:
         run: echo "Deploying your Flask application here..."
 
       - name: Run Composite Action
-        uses: ./.github/workflows/composite_action.yml
+        uses: ./
 
       
