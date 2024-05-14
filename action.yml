@@ -14,13 +14,16 @@ runs:
       shell: bash
       run: pip install -r requirements.txt
 
-      - name: Lint with Ruff
-        shell: bash
-        run: |
-          pip install ruff
-          ruff --output-format=github .
-        continue-on-error: true
-
     - name: Run tests
       shell: bash
       run: pytest
+
+    - name: Upload pytest test results
+      uses: actions/upload-artifact@v4
+      with:
+        name: pytest-results-${{ matrix.python-version }}
+        path: junit/test-results-${{ matrix.python-version }}.xml
+    # Use always() to always run this step to publish test results when there are test failures
+      if: ${{ always() }}
+
+    
