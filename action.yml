@@ -14,6 +14,13 @@ runs:
       shell: bash
       run: pip install -r requirements.txt
 
+      - name: Lint with Ruff
+        shell: bash
+        run: |
+          pip install ruff
+          ruff --output-format=github .
+        continue-on-error: true
+
     - name: Run tests
       shell: bash
       run: pytest
