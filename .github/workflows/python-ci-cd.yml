@@ -27,6 +27,6 @@ jobs:
         run: echo "Deploying your Flask application..."
 
       - name: Run Composite Action
-        uses: Thilaga-26/python-ci@v5
+        uses: Thilaga-26/python-ci@latest
 
       
