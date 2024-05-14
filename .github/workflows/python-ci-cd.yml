@@ -21,12 +21,12 @@ jobs:
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Deploy to Production
         run: echo "Deploying your Flask application..."
 
       - name: Run Composite Action
-        uses: solvers-camp/python-ci/action-one@v4
+        uses: solvers-camp/python-ci@v4
 
       
