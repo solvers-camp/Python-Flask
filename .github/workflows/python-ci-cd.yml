@@ -30,8 +30,7 @@ jobs:
         env:
           SECRET_KEY: ${{ secrets.SECRETS_KEY }} 
         shell: bash
-        run: |
-          python app.py
+        run: echo "Deploy the flask application..."
 
       
 
