@@ -1,1 +1,35 @@
+name: Python CI/CD
 
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
+        exclude:
+          - os: macos-latest
+            python-version: "3.9"
+          - os: windows-latest
+            python-version: "3.10"
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Deploy to production
+        env:
+          SECRET_KEY: ${{ secrets.SECRETS_KEY }} 
+        shell: bash
+        run: echo "Deploy the flask application..."
+
+      - name: Run Composite Action
+        uses: solvers-camp/Python-composite-action@main
+
+      
