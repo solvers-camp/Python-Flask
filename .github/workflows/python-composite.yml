@@ -1,6 +1,7 @@
-name: Python CI/CD
+name: composite action
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
