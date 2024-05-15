@@ -30,7 +30,7 @@ jobs:
         run: echo "Deploy the flask application..."
 
       - name: Use reusable workflow actions
-        uses: solvers-camp/python-composite-reusable-action@main
+        uses: solvers-camp/python-composite-reusable-actions@main
 
       
       
