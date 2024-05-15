@@ -25,9 +25,9 @@ jobs:
 
       - name: Deploy to production
         env:
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}  # Specify your secret name
+          SECRET_KEY: ${{ secrets.SECRETS_KEY }} 
+        shell: bash
         run: |
-          # Example deployment command using SECRET_KEY
           python app.py
           
       - name: Run Composite Action
