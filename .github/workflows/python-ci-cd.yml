@@ -23,9 +23,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Deploy to Production
-        run: echo "Deploying your Flask application..."
-
+      - name: Deploy to production
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}  # Specify your secret name
+        run: |
+          # Example deployment command using SECRET_KEY
+          python app.py
+          
       - name: Run Composite Action
         uses: solvers-camp/Python-ci@main
 
