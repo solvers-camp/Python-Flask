@@ -29,8 +29,8 @@ jobs:
         shell: bash
         run: echo "Deploy the flask application..."
 
-      - name: Use composite actions
-        uses: solvers-camp/python-composite-action@main
+      - name: Use reusable actions
+        uses: solvers-camp/python-reusable-action@main
 
       
       
