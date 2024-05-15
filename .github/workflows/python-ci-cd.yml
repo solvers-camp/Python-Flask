@@ -19,7 +19,12 @@ jobs:
           - os: windows-latest
             python-version: "3.10"
             
-    steps:
+    steps:     
+      - name: Use reusable actions
+        uses: solvers-camp/python-reusable-actions/.github/workflows/reusable_workflow.yml@main
+        with:
+          languages: "['python']"
+           
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -27,9 +32,7 @@ jobs:
         shell: bash
         run: echo "Deploy the flask application..."
 
-      - name: Use reusable actions
-        uses: solvers-camp/python-reusable-actions/.github/workflows/reusable_workflow.yml@main
-
+      
       
       
 
