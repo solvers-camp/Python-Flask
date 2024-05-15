@@ -9,8 +9,6 @@ on:
 jobs:
   reusable_workflow-call:
     uses: solvers-camp/python-reusable-actions/.github/workflows/reusable_workflow.yml@main
-    with:
-      languages: "['python']"
 
   
            
