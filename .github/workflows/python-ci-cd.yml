@@ -22,9 +22,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-     
-      - name: Run Composite Action
-        uses: solvers-camp/Python-ci@main
 
       - name: Deploy to production
         env:
@@ -32,6 +29,10 @@ jobs:
         shell: bash
         run: echo "Deploy the flask application..."
 
+      - name: Use reusable workflow actions
+        uses: solvers-camp/python-composite-reusable-action@main
+
+      
       
 
 
